@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* Progress Bar */
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background: cyan;
+    z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 999;
+}
+
+.navbar a {
+    color: cyan;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero img {
+    width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 30px cyan;
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+.hero h2 {
+    color: cyan;
+    margin: 10px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Buttons */
+.buttons a {
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, cyan, magenta);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.buttons a:hover {
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: cyan;
+}
+
+#qualification ul {
+    list-style: none;
+}
+
+#qualification li {
+    margin: 10px 0;
+}
+
+/* Skills */
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-box span {
+    background: rgba(255,255,255,0.1);
+    margin: 10px;
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px magenta;
+}
+
+/* Social */
+.social-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, magenta, cyan);
+    color: black;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+}
+
+/* Back to top */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 15px;
+    border-radius: 50%;
+    border: none;
+    background: cyan;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+
+.glass:hover {
+    box-shadow: 0 0 25px cyan;
+    transition: 0.5s;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    height: 150px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px magenta;
+    transition: transform 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+
+ /* ===============================
+   NEW COLOR PALETTE (ACCENTS)
+================================ */
+:root {
+    --neon-blue: #00f7ff;
+    --electric-purple: #a855f7;
+    --gold-glow: #ffd700;
+    --soft-pink: #ff4ecd;
+}
+
+/* ===============================
+   HERO TEXT GRADIENT UPGRADE
+================================ */
+.hero h1 {
+    background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple), var(--soft-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+/* ===============================
+   GLASS CARD PREMIUM BORDER
+================================ */
+.glass {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(120deg, var(--neon-blue), var(--electric-purple), var(--gold-glow));
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* ===============================
+   HOVER GLOW EFFECT (ALL SECTIONS)
+================================ */
+.glass:hover {
+    box-shadow:
+        0 0 20px var(--neon-blue),
+        0 0 40px var(--electric-purple);
+    transform: translateY(-6px);
+    transition: 0.4s ease;
+}
+
+/* ===============================
+   SKILLS COLOR VARIATION
+================================ */
+.skills-box span:nth-child(odd) {
+    box-shadow: 0 0 15px var(--electric-purple);
+}
+
+.skills-box span:nth-child(even) {
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.skills-box span:hover {
+    background: linear-gradient(45deg, var(--neon-blue), var(--soft-pink));
+    color: black;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* ===============================
+   PROJECT CARD COLOR UPGRADE
+================================ */
+.card {
+    background: linear-gradient(
+        145deg,
+        rgba(168,85,247,0.2),
+        rgba(0,247,255,0.2)
+    );
+}
+
+.card:hover {
+    box-shadow:
+        0 0 25px var(--gold-glow),
+        0 0 50px var(--electric-purple);
+}
+
+/* ===============================
+   BUTTON COLOR MAGIC
+================================ */
+.buttons a:hover {
+    box-shadow:
+        0 0 15px var(--neon-blue),
+        0 0 30px var(--soft-pink);
+}
+
+/* ===============================
+   SOCIAL LINKS PREMIUM LOOK
+================================ */
+.social-links a {
+    background: linear-gradient(45deg, var(--electric-purple), var(--gold-glow));
+}
+
+.social-links a:hover {
+    box-shadow:
+        0 0 20px var(--gold-glow),
+        0 0 40px var(--electric-purple);
+    transform: translateY(-5px);
+}
+
+/* ===============================
+   NAVBAR UNDERLINE ANIMATION
+================================ */
+.navbar a {
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--electric-purple));
+    transition: 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* ===============================
+   FOOTER GLOW
+================================ */
+footer {
+    box-shadow: inset 0 10px 30px rgba(168,85,247,0.3);
+}
+
+/* ===============================
+   BACK TO TOP BUTTON UPGRADE
+================================ */
+#topBtn {
+    background: linear-gradient(45deg, var(--neon-blue), var(--electric-purple));
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+#topBtn:hover {
+    box-shadow:
+        0 0 25px var(--gold-glow),
+        0 0 50px var(--soft-pink);
+}
+
+
+ /* ===============================
+   PROFILE IMAGE PREMIUM UPGRADE
+================================ */
+
+.hero img {
+    width: 190px;
+    border-radius: 50%;
+    padding: 6px;
+
+    /* MULTI-COLOR GLOW RING */
+    background: linear-gradient(
+        45deg,
+        #00f7ff,
+        #a855f7,
+        #ff4ecd,
+        #ffd700
+    );
+
+    box-shadow:
+        0 0 25px rgba(0,247,255,0.9),
+        0 0 45px rgba(168,85,247,0.8),
+        0 0 65px rgba(255,78,205,0.7);
+
+    animation: profilePulse 6s ease-in-out infinite;
+    transition: transform 0.4s ease;
+}
+
+/* IMAGE INSIDE CLEAN */
+.hero img {
+    background-clip: padding-box;
+}
+
+/* HOVER EFFECT */
+.hero img:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow:
+        0 0 35px #00f7ff,
+        0 0 65px #a855f7,
+        0 0 90px #ffd700;
+}
+
+/* ===============================
+   PULSE ANIMATION
+================================ */
+@keyframes profilePulse {
+    0% {
+        box-shadow:
+            0 0 25px #00f7ff,
+            0 0 45px #a855f7,
+            0 0 65px #ff4ecd;
+    }
+    50% {
+        box-shadow:
+            0 0 35px #ffd700,
+            0 0 65px #ff4ecd,
+            0 0 90px #00f7ff;
+    }
+    100% {
+        box-shadow:
+            0 0 25px #00f7ff,
+            0 0 45px #a855f7,
+            0 0 65px #ff4ecd;
+    }
+}
+
+ /* =====================================
+   WELCOME PAGE BACKGROUND UPGRADE
+===================================== */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0,247,255,0.15),
+        rgba(168,85,247,0.15),
+        rgba(255,78,205,0.15)
+    );
+    animation: heroGradient 10s ease infinite;
+    z-index: 0;
+}
+
+/* Subtle glowing particles */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0,247,255,0.25), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(168,85,247,0.25), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(255,215,0,0.25), transparent 40%);
+    animation: floatLights 12s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Ensure content stays on top */
+.hero .content {
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================
+   HERO TEXT ANIMATION & STYLE
+===================================== */
+.hero h1 {
+    letter-spacing: 2px;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.hero h2 {
+    animation: fadeUp 2s ease forwards;
+}
+
+.hero p {
+    animation: fadeUp 2.5s ease forwards;
+}
+
+/* =====================================
+   BUTTONS PREMIUM STYLE
+===================================== */
+.buttons a {
+    position: relative;
+    overflow: hidden;
+}
+
+.buttons a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.4),
+        rgba(255,255,255,0)
+    );
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
+
+.buttons a:hover::before {
+    transform: translateX(100%);
+}
+
+/* =====================================
+   SCROLL DOWN INDICATOR
+===================================== */
+.hero::marker {
+    display: none;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+@keyframes heroGradient {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(40deg); }
+    100% { filter: hue-rotate(0deg); }
+}
+
+@keyframes floatLights {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* YouTube special glow */
+.social-links a[href*="youtube"] {
+    background: linear-gradient(45deg, #ff0000, #ff4d4d);
+    color: white;
+    box-shadow: 0 0 20px rgba(255,0,0,0.8);
+}
+
+.social-links a[href*="youtube"]:hover {
+    box-shadow:
+        0 0 30px #ff0000,
+        0 0 60px #ff4d4d;
+    transform: translateY(-6px) scale(1.05);
+}
