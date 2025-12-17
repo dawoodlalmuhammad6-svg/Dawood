@@ -559,4 +559,17 @@ footer {
         0 0 30px #ff0000,
         0 0 60px #ff4d4d;
     transform: translateY(-6px) scale(1.05);
+} /* ===============================
+   FIX SOCIAL LINK CLICK ISSUE
+=============================== */
+
+.hero::before,
+.hero::after,
+.glass::before {
+    pointer-events: none;
+}
+
+.social-links a {
+    position: relative;
+    z-index: 999;
 }
